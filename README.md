@@ -12,7 +12,7 @@
 </p>
 
 # IOT1026-Assignment-4
-Write a description of the project here and don't forget to update the badges.  
+Write a description of the project here.
 
 [Assignment Instructions](docs/instructions.md)  
 [How to start coding](docs/how-to-use.md)  
