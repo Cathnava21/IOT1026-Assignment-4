@@ -6,7 +6,7 @@ namespace AssignmentTest
     public class AssignmentTests
     {
         [TestMethod]
-public void PropertiesTest()
+        public void PropertiesTest()
         {
             Robot robot1 = new();
             Assert.AreEqual(robot1.NumCommands, 6);
