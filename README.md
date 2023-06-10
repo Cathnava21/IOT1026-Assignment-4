@@ -12,7 +12,7 @@
 </p>
 
 # IOT1026-Assignment-4
-Write a description of the project here.
+In this program, we can send instructions to a robot in order to move it in the cartesian directions..
 
 [Assignment Instructions](docs/instructions.md)  
 [How to start coding](docs/how-to-use.md)  
