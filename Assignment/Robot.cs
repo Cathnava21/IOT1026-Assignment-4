@@ -14,6 +14,10 @@ public class Robot
     private readonly Queue<RobotCommand> _commands;
     private int _commandsLoaded = 0;
 
+    /// <summary>
+    /// Returns a string representation of the robot's current state.
+    /// </summary>
+    /// <returns>A string representation of the robot's current state.</returns>
     public override string ToString()
     {
         return $"[{X} {Y} {IsPowered}]";
@@ -33,9 +37,9 @@ public class Robot
     }
 
     /// <summary>
-    ///
+    /// Executes the loaded commands in the robot's queue.
     /// </summary>
-    /// <throws> </throws>
+    /// <returns><c>true</c> if the commands were executed successfully; otherwise, <c>false</c>.</returns>
     public bool Run()
     {
         if (_commands.Count == 0)
@@ -51,10 +55,10 @@ public class Robot
     }
 
     /// <summary>
-    ///
+    /// Loads a command into the robot's queue.
     /// </summary>
-    /// <param name="command"></param>
-    /// <returns></returns>
+    /// <param name="command">The command to be loaded.</param>
+    /// <returns><c>true</c> if the command was loaded successfully; otherwise, <c>false</c>.</returns>
     public bool LoadCommand(RobotCommand command)
     {
         if (_commandsLoaded >= NumCommands)
