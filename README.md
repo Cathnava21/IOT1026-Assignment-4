@@ -16,7 +16,7 @@ In this program, we can send instructions to a robot in order to move it in the 
 
 This is an example:
         
-        ![image](https://github.com/Cathnava21/IOT1026-Assignment-4/assets/131034603/bc57637b-3c3c-42cd-a5a0-f450c9437813)
+![image](https://github.com/Cathnava21/IOT1026-Assignment-4/assets/131034603/fa929da2-c375-4cf1-a5de-d9b03e54682c)
 
 
 [Assignment Instructions](docs/instructions.md)  
