@@ -136,5 +136,56 @@ namespace AssignmentTest
             Assert.AreEqual(testRobot.Y, 0);
             Assert.AreEqual(testRobot.IsPowered, false);
         }
+        [TestMethod]
+        public void OffCommandTest()
+        {
+            Robot testRobot = new Robot();
+            testRobot.IsPowered = true;
+            Assert.AreEqual(testRobot.IsPowered, true);
+            testRobot.LoadCommand(new OffCommand());
+            testRobot.Run();
+            Assert.AreEqual(testRobot.IsPowered, false);
+        }
+        [TestMethod]
+        public void LoadCommandCapacityTest()
+        {
+            int numCommands = 3;
+            Robot testRobot = new Robot(numCommands);
+            for (int i = 0; i < numCommands; i++)
+            {
+                Assert.IsTrue(testRobot.LoadCommand(new OnCommand()));
+            }
+            Assert.IsFalse(testRobot.LoadCommand(new OnCommand()));
+        }
+        [TestMethod]
+        public void RunEmptyCommandsTest()
+        {
+            Robot testRobot = new Robot();
+            Assert.IsFalse(testRobot.Run());
+        }
+        [TestMethod]
+        public void MixedCommandsTest()
+        {
+            Robot testRobot = new Robot();
+            testRobot.IsPowered = true;
+
+            testRobot.LoadCommand(new NorthCommand());
+            testRobot.Run();
+            testRobot.LoadCommand(new EastCommand());
+            testRobot.Run();
+            testRobot.LoadCommand(new OnCommand());
+            testRobot.Run();
+            testRobot.LoadCommand(new SouthCommand());
+            testRobot.Run();
+            testRobot.LoadCommand(new OffCommand());
+            testRobot.Run();
+            testRobot.LoadCommand(new WestCommand());
+
+            testRobot.Run();
+
+            Assert.AreEqual(testRobot.X, 1);
+            Assert.AreEqual(testRobot.Y, 0);
+            Assert.IsFalse(testRobot.IsPowered);
+        }
     }
 }
