@@ -115,5 +115,26 @@ namespace AssignmentTest
             testRobot.Run();
             Assert.AreEqual(testRobot.X, -2);
         }
+        [TestMethod]
+        public void RebootCommandTest()
+        {
+            Robot testRobot = new Robot();
+            testRobot.IsPowered = true;
+            Assert.AreEqual(testRobot.X, 0);
+            Assert.AreEqual(testRobot.Y, 0);
+
+            testRobot.LoadCommand(new NorthCommand());
+            testRobot.Run();
+            Assert.AreEqual(testRobot.Y, 1);
+            testRobot.LoadCommand(new EastCommand());
+            testRobot.Run();
+            Assert.AreEqual(testRobot.X, 1);
+
+            testRobot.LoadCommand(new RebootCommand());
+            testRobot.Run();
+            Assert.AreEqual(testRobot.X, 0);
+            Assert.AreEqual(testRobot.Y, 0);
+            Assert.AreEqual(testRobot.IsPowered, false);
+        }
     }
 }
